@@ -45,8 +45,8 @@ public class JdbcController {
     @RequestMapping("/delete/{id}")
     public String deleteUser(@PathVariable Integer id)
     {
-        String sql="delete from user where id=id";
-        jdbcTemplate.update(sql);
+        String sql="delete from user where id=?";
+        jdbcTemplate.update(sql,id);
         return "redirect:/userList";
     }
 }

@@ -15,6 +15,7 @@ class SpringdataApplicationTests {
     @Test
     void contextLoads() {
 //        数据源类型：class com.zaxxer.hikari.HikariDataSource
+//        在yaml中配置type后为：class com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper
         System.out.println(dataSource.getClass());
     }
 
