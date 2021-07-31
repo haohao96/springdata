@@ -1,7 +1,30 @@
 spring:
   datasource:
-    username: root
-    password: piyihao
-    url: jdbc:mysql://localhost:3306/springdata?serverTimezone=Asia/Shanghai
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+
+      username: root
+      password: piyihao
+      url: jdbc:mysql://localhost:3306/springdata?serverTimezone=Asia/Shanghai
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      initial-size: 23
+      max-active: 23
+      filter:
+        stat:
+          merge-sql: true
+      filters: stat,wall
+
+
+
+#    这些配置直接配置在DataSource下面，而不是按照自动提示的配置在druid下
+#    max-active: 66
+#    connectionProperties: druid.stat.mergeSql=true
+#    filters: stat,wall
+#    maxActive: 20
+
+
+
+
+
+
+
